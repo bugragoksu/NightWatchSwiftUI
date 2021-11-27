@@ -7,54 +7,32 @@
 
 import SwiftUI
 
-let nightlyTasks = [
-    "Check all windows",
-    "Check all doors",
-    "Check that the safe is locked",
-    "Check the mailbox",
-    "Inspect security cameras",
-    "Clear ice from sidewalks",
-    "Document \"strange and unsual\" occurences"
-]
-
-let weeklyTasks = [
-   "Check inside all vacant rooms",
-   "Walk the perimeter of property"
-]
-
-let monthlyTasks = [
-    "Test security alarm",
-    "Test motion detectors",
-    "Test smoke alarms"
-]
 
 
-func getTextList(textList : [String]) ->some View{
-    ForEach(textList, id: \.self, content: {
-        text in
-        NavigationLink(text,destination: Text(text))
-    })
-}
+
+ 
 
 struct ContentView: View {
     
-   
+    @ObservedObject var nightWatchTasks : NightWatchTasks
     
     var body: some View {
-        
+          
         NavigationView {
             List{
+                    
+                
                         // MARK: Nightly  Tasks
                 Section(header:TaskSectionHeader(systemName: "moon.stars", title: "Nightly Tasks")){
                   
-                    TaskList(taskList: nightlyTasks)
+                    TaskList(taskList: $nightWatchTasks.nightlyTasks)
                             
                         }
                         
                         // MARK: Weekly Tasks
                         Section(header:TaskSectionHeader(systemName: "sunset", title: "Weekly Tasks")){
                             
-                            TaskList(taskList: weeklyTasks)
+                            TaskList(taskList: $nightWatchTasks.weeklyTasks)
                             
                         }
                        
@@ -62,7 +40,7 @@ struct ContentView: View {
                         // MARK: Monthly Tasks
                         Section(
                             header:TaskSectionHeader(systemName: "calendar", title: "MonthlyTasks")){
-                                TaskList(taskList: monthlyTasks)
+                                TaskList(taskList: $nightWatchTasks.monthlyTasks)
                                 }
             }
             .listStyle(.grouped)
@@ -74,7 +52,12 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let nightWatchTasks = NightWatchTasks()
+        Group{
+            ContentView(nightWatchTasks: nightWatchTasks)
+            TaskRow(task: Task(name: "Test task", isComplete: true, lastCompleted: nil))
+                .previewLayout(.fixed(width: 300, height: 70))
+        }
     }
 }
 

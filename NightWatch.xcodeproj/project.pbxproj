@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE12BC9B27523348001B0CAE /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12BC9A27523348001B0CAE /* Task.swift */; };
+		CE12BC9D27524B6B001B0CAE /* TaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12BC9C27524B6B001B0CAE /* TaskRow.swift */; };
+		CE12BC9F27524D12001B0CAE /* NightWatchTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12BC9E27524D12001B0CAE /* NightWatchTasks.swift */; };
 		CEC0F67C275118A50054AEBE /* TaskSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0F67B275118A50054AEBE /* TaskSectionHeader.swift */; };
 		CEC0F67E275119810054AEBE /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0F67D275119810054AEBE /* TaskList.swift */; };
 		CEC0F68027511A4A0054AEBE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0F67F27511A4A0054AEBE /* DetailView.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE12BC9A27523348001B0CAE /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		CE12BC9C27524B6B001B0CAE /* TaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRow.swift; sourceTree = "<group>"; };
+		CE12BC9E27524D12001B0CAE /* NightWatchTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightWatchTasks.swift; sourceTree = "<group>"; };
 		CEC0F67B275118A50054AEBE /* TaskSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSectionHeader.swift; sourceTree = "<group>"; };
 		CEC0F67D275119810054AEBE /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
 		CEC0F67F27511A4A0054AEBE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -60,10 +66,13 @@
 				CEF72700274FAF0D00B47F9F /* NightWatchApp.swift */,
 				CEF72702274FAF0D00B47F9F /* ContentView.swift */,
 				CEC0F67B275118A50054AEBE /* TaskSectionHeader.swift */,
+				CEC0F67F27511A4A0054AEBE /* DetailView.swift */,
 				CEC0F67D275119810054AEBE /* TaskList.swift */,
+				CE12BC9A27523348001B0CAE /* Task.swift */,
+				CE12BC9C27524B6B001B0CAE /* TaskRow.swift */,
+				CE12BC9E27524D12001B0CAE /* NightWatchTasks.swift */,
 				CEF72704274FAF0F00B47F9F /* Assets.xcassets */,
 				CEF72706274FAF0F00B47F9F /* Preview Content */,
-				CEC0F67F27511A4A0054AEBE /* DetailView.swift */,
 			);
 			path = NightWatch;
 			sourceTree = "<group>";
@@ -150,7 +159,10 @@
 				CEF72703274FAF0D00B47F9F /* ContentView.swift in Sources */,
 				CEC0F67C275118A50054AEBE /* TaskSectionHeader.swift in Sources */,
 				CEC0F68027511A4A0054AEBE /* DetailView.swift in Sources */,
+				CE12BC9B27523348001B0CAE /* Task.swift in Sources */,
+				CE12BC9D27524B6B001B0CAE /* TaskRow.swift in Sources */,
 				CEF72701274FAF0D00B47F9F /* NightWatchApp.swift in Sources */,
+				CE12BC9F27524D12001B0CAE /* NightWatchTasks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

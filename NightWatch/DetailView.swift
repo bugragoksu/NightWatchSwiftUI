@@ -3,12 +3,20 @@ import SwiftUI
 
 
 struct DetailView : View{
-    let text : String
+    @Binding var task : Task
     var body: some View{
         VStack{
-            Text(text)
+            Text(task.name)
             Text("Placeholder for task description")
-            Text("Placeholder for mark complete button")
+            Button("Mark Complete"){
+                task.isComplete = true
+            }
         }
+    }
+}
+
+struct Detailview_Previews : PreviewProvider{
+    static var previews: some View{
+        DetailView(task: Binding<Task>.constant(Task(name: "Test task", isComplete: false, lastCompleted: nil)))
     }
 }
