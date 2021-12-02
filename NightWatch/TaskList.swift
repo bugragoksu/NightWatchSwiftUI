@@ -4,6 +4,8 @@ struct TaskList: View {
     
     @Binding var taskList : [Task]
     
+    @Binding var focusModeOn : Bool
+    
     var body: some View {
         
         let tasksBinding = $taskList
@@ -20,10 +22,16 @@ struct TaskList: View {
             let theTaskBinding = tasksBinding[taskIndex]
             
             
+            if focusModeOn == false || (focusModeOn && !task.isComplete){
+                NavigationLink(destination: DetailView(task: theTaskBinding), label: {
+                    TaskRow(task: task)
+                })
+            }
             
-            NavigationLink(destination: DetailView(task: theTaskBinding), label: {
-                TaskRow(task: task)
-            })
-        })
+        }).onDelete { indexSet in
+            taskList.remove(atOffsets: indexSet)
+        }.onMove { indices, newOffset in
+            taskList.move(fromOffsets: indices, toOffset: newOffset)
+        }
     }
 }
